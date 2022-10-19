@@ -1,8 +1,13 @@
-alias la="ls -la"
-alias ..="cd .."
-alias ...="cd ../.."
 if exa -v &> /dev/null
 then
   alias ls=exa
 fi
 
+# yoinked these from work bashrc
+alias grep="grep --color -E"
+alias la="ls -Alh"
+alias lt="ls -ltrh"
+alias ..="cd .."
+alias ...="cd ../.."
+alias .4="cd ../../.."
+alias .5="cd ../../../.."
