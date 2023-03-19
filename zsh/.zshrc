@@ -4,7 +4,11 @@
 # starship prompt
 eval "$(starship init zsh)"
 
+export ZDOTDIR=$HOME/.config/zsh
+
 # history
+SAVEHIST=2000  # Save most-recent 1000 lines
+HISTFILE=~/.zsh_history
 setopt appendhistory
 
 # other config files
