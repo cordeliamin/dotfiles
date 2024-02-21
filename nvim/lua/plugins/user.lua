@@ -228,11 +228,24 @@ return {
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
   {
     "L3MON4D3/LuaSnip",
+    opts = {
+      history = true,
+      region_check_events = "InsertEnter",
+      delete_check_events = "TextChanged",    
+    },
     keys = function()
       return {}
     end,
   },
   -- then: setup supertab in cmp
+  {
+    "github/copilot.vim",
+    config = function()
+      vim.g.copilot_enabled = true
+      vim.g.copilot_no_tab_map = true
+      vim.cmd('imap <silent><script><expr> <C-C> copilot#Accept("")')
+    end,
+  },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -275,4 +288,5 @@ return {
       })
     end,
   },
+  -- add chicken plugin 
 }
